@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use \Illuminate\Support\Str;
+use \Illuminate\Support\Facades\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +34,11 @@ Route::delete('/questionnaires/{questionnaire}/questions/{question}','QuestionCo
 
 Route::get('/surveys/{questionnaire}-{slug}', 'SurveyController@show');
 Route::post('/surveys/{questionnaire}-{slug}', 'SurveyController@store');
+
+//Macros
+Route::get('/macros', function (){
+    dd(Str::partNumber('43243242'));
+});
+Route::get('/macros2', function (){
+    return Response::errorJson('A huge error occured. Boom!');
+});
